@@ -106,6 +106,8 @@ services:
       - 3000
     depends_on:
       - mongo
+    volumes:
+      - "./config:/build/config"
 
   biap-igm-node-js:
     build:
@@ -132,6 +134,7 @@ services:
       - mongo
     volumes:
       - "./images:/app/images"
+      - "./config:/app/config"
     restart: always
 
   py-ondc-protocol:
