@@ -1,5 +1,6 @@
 *.idea*
 .env
+.env.*
 firebase_config.json
 /data
 /config
