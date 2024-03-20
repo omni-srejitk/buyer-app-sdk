@@ -1,23 +1,23 @@
 [testing]
-43.205.229.21
+buyer-app-testing.pragatiapp.com
 
 [stage]
-13.234.78.70
+buyer-app-staging.pragatiapp.com
 
 [preprod]
-43.205.208.46
+buyer-app-preprod.pragatiapp.com
 
 [legacy]
-52.66.197.85
+buyer-app-legacy.pragatiapp.com
 
 [prod]
-52.66.207.19
+buyer-app-prod.pragatiapp.com
 
 [dev-internal]
-ondc-ref-app-buyer-dev-internal
+buyer-app-dev-internal.pragatiapp.com
 
 [pre-prod-2]
-ondc-ref-app-buyer-v2
+buyer-app-pre-prod-v2.pragatiapp.com
 
 [defaults]
 [testing:vars]
@@ -25,5 +25,5 @@ ondc-ref-app-buyer-v2
 [preprod:vars]
 [legacy:vars]
 [prod:vars]
-ansible_ssh_private_key_file = /Users/navdeepagarwal/.ondc/ondc-prod-prod-ondc-ec2-key-pair-ssh-key
+# sansible_ssh_private_key_file = /Users/navdeepagarwal/.ondc/ondc-prod-prod-ondc-ec2-key-pair-ssh-key
 ansible_python_interpreter = /usr/bin/python3
