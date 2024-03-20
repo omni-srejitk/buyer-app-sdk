@@ -1,6 +1,6 @@
 *.idea*
 .env
-.env.*
+.env-staging
 firebase_config.json
 /data
 /config
