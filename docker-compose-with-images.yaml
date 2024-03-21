@@ -1,4 +1,4 @@
-version: '2'
+version: "2"
 
 services:
   mongo:
@@ -7,8 +7,7 @@ services:
     ports:
       - 27017:27017
     volumes:
-      - './data:/data/db'
-
+      - "./data:/data/db"
 
   mmi-client:
     image: navdeep710/ondc-ancillary-services:v3
@@ -60,7 +59,6 @@ services:
       - ./data/certbot/conf:/etc/letsencrypt
       - ./data/certbot/www:/var/www/certbot
 
-
   certbot:
     image: certbot/certbot
     restart: "always"
@@ -107,8 +105,8 @@ services:
 
   py-ondc-protocol:
     build:
-      context: py-ondc-protocol
-    container_name: py-ondc-protocol/webserver
+      context: py-ondc-protocol/webserver
+    container_name: py-ondc-protocol
     environment:
       ENV: ${PROTOCOL_ENV}
       MONGO_DATABASE_HOST: ${MONGO_DATABASE_HOST}
@@ -143,6 +141,7 @@ services:
       BUGZILLA_SERVICE_URI: ${BUGZILLA_SERVICE_URI}
       BAP_URL: ${BAP_URL}
       VOLUME_IMAGES_BASE_URL: ${VOLUME_IMAGES_BASE_URL}
+      LOG_LEVEL: ${LOG_LEVEL}
     container_name: biap-igm-node-js
     ports:
       - "8989:6969"
@@ -161,6 +160,7 @@ services:
     environment:
       BUGZILLA_WWW: /var/www/html/bugzilla/
       BUGZILLA_ADMIN_EMAIL: ${BUGZILLA_ADMIN_EMAIL}
+      LOG_LEVEL: ${LOG_LEVEL}
     container_name: bugzilla-dev-service
     image: shameerkc/bugzilla-dev-sqlite
     ports:
